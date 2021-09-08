@@ -87,12 +87,16 @@ mark {
 
 /* Change color of selected list item */
 .list-item-container.selected {
-    background-color: var(--color-background-dark) !important;
+    background-color: var(--color-background-hover) !important;
 }
 
 /* change color of hovered list item */
-.list-item-container:hover {
+.list-item-container.selected:hover {
     background-color: var(--color-background-hover) !important;
+}
+
+.list-item-container:hover {
+    background-color: var(--color-background-dark) !important;
 }
 
 
