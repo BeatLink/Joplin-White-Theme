@@ -34,7 +34,7 @@
     --animation-quick: 100ms;
     --animation-slow: 300ms;
     --header-height: 50px;
-    --element-height:35px;
+    --element-height:40px;
 }
 
 /**************************************************************************************************
@@ -50,13 +50,18 @@ html, body {
     font-family: var(--font-face);
 }
 
+mark {
+    background-color: var(--color-text-lighter) !important;
+    padding: 3px;
+}
+
 /**************************************************************************************************
  *  PANELS
  *************************************************************************************************/
 
  /* Add border to all panels, Set minimum width for all panels */
 .rli-root > .resizableLayoutItem {
-    border-right: 1px solid var(--color-border) !important;
+    border-right: 2px solid var(--color-border) !important;
     min-width: 200px !important;
 }
 
@@ -68,7 +73,7 @@ html, body {
 
 /* Hide Scrollbar */
 ::-webkit-scrollbar{
-    width: 0px !important;
+    width: 4px !important;
 }
 
 /************************************************************************************************
@@ -153,6 +158,10 @@ html, body {
  *  Note List
  *************************************************************************************************/
 
+ .rli-noteList > div > div > div {
+    border: none !important;
+}
+
 .note-list {
     background-color: var(--color-main-background) !important;
     border: none;
@@ -161,14 +170,11 @@ html, body {
     padding: 0;
 }
 
-.note-list > div > div > div {
-    border: none;
-}
 
 .note-list .list-item-container{
     border: none !important;
     padding: 10px;
-    height: 20px;
+    height: var(--element-height) !important;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -176,6 +182,10 @@ html, body {
     align-items: center;
     background-color: var(--color-main-background);
     width: 100%;
+}
+
+.list-item-container::before {
+    border: none;
 }
 
 .note-list .list-item-container > * {
@@ -214,44 +224,40 @@ html, body {
  *  Search
  *************************************************************************************************/
 
-
-
-/***
-Search Bar
-
-**/
-
-.rli-noteList > div > div > div:first-child {
-    background-color: var(--color-main-background);
-
-}
-/* global search */
 .rli-noteList > div > div > div:first-child  {
-    height: 50px !important;
-    background: var(--color-main-background) !important;
+    height: calc(var(--element-height) + 3px) !important;
+    background-color: var(--color-main-background) !important;
     padding: 10px;
     border-bottom: 2px solid var(--color-border) !important;
     align-items: center;
-
 }
+
+.rli-noteList > div > div > div:first-child > * {
+    margin: 0 2px;
+}
+
 
 .search-bar{
     border: medium none !important;
-      box-sizing: border-box;
-      color: var(--color-main-text);
-      cursor: text;
-      font-size: 100%;
-      margin: 0;
-      padding: 0 15px;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      outline: none;
-      border-radius: var(--border-radius);
-      background-color: var(--color-main-background);
+    box-sizing: border-box;
+    color: var(--color-main-text);
+    cursor: text;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    outline: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-main-background);
     box-shadow: 0 0 2px var(--color-box-shadow);
     text-shadow: unset;
+}
+
+.search-bar > div {
+    align-items: center;
 }
 
 /* icon search */
@@ -259,29 +265,33 @@ Search Bar
   color: var(--icons) !important;
     min-height: var(--element-height);
     margin:0 !important;
-margin-right: 5px !important;
-opacity: .5;
+    margin-right: 5px !important;
+    opacity: .5;
     height: var(--element-height);
     display: none;
 }
+
+.rli-noteList > div > div > div:first-child  > div:last-child {
+    align-items: center;
+}
+
 .rli-noteList > div > div > div:first-child button {
-  background: transparent  !important;
-  color: var(--color-main-text) !important;
-      padding: 20px 0;
-      opacity: .8;
-          border-radius: 50px;
+    background: transparent  !important;
+    color: var(--color-main-text) !important;
+    padding: 20px 0;
+    opacity: .8;
+    border-radius: 50px;
     height: 20px;
     width: 20px;
     padding: 0;
-    margin-top: 7px;
 }
+
 .rli-noteList > div > div > div:first-child button:hover {
-  opacity: 1;
-  background-color: rgba(0,0,0,0.1) !important;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.1) !important;
 }
 
 .rli-noteList > div > div > div:first-child button span {
     color: var(--color-main-text) !important;
     font-weight: bold !important;
-
 }
