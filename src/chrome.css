@@ -42,38 +42,74 @@
 **************************************************************************************************/
 
 html, body {
-  background-color: var(--color-main-background);
-  line-height: var(--default-line-height);
-  color: var(--color-main-text);
-  font-weight: normal;
-  font-size: var(--font-size);
-  font-family: var(--font-face);
+    background-color: var(--color-main-background);
+    line-height: var(--default-line-height);
+    color: var(--color-main-text);
+    font-weight: normal;
+    font-size: var(--font-size);
+    font-family: var(--font-face);
 }
+
+/**************************************************************************************************
+ *  PANELS
+ *************************************************************************************************/
+
+ /* Add border to all panels, Set minimum width for all panels */
+.rli-root > .resizableLayoutItem {
+    border-right: 1px solid var(--color-border) !important;
+    min-width: 200px !important;
+}
+
+/* Ensure panels expand to fill parent */
+.rli-root > .resizableLayoutItem > div, .rli-root > .resizableLayoutItem > .resizableLayoutItem > div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar{
+    width: 0px !important;
+}
+
+/************************************************************************************************
+* LIST ITEMS
+************************************************************************************************/
+
+/* Set height of list items */
+.list-item-container{
+    min-height: var(--element-height);
+}
+
+/* Change color of selected list item */
+.list-item-container.selected {
+    background-color: var(--color-background-dark) !important;
+}
+
+/* change color of hovered list item */
+.list-item-container:hover {
+    background-color: var(--color-background-hover) !important;
+}
+
 
 /**************************************************************************************************
  *  SIDEBAR
  *************************************************************************************************/
-/* Hide All Notes 
-.folders:first-child {
-  display: none !important;
+/* Hide all Notes */
+.all-notes {
+    display: none !important;
 }
 
-.hAzLGs,.gvPZcU,.bNOfCT  { 
-  display: none !important;
-} */
-
-
+/* Set sidebar colors */
 .sidebar {
-  background-color: var(--color-main-background) !important;
-  color: var(--color-main-text) !important;
-  border: 2px solid var(--color-border);
+    background-color: var(--color-main-background) !important;
+    color: var(--color-main-text) !important;
 }
 
-.sidebar .folders .list-item, .sidebar div, .sidebar span {
+/* Make sidebar headings visible */
+.sidebar .list-item, .sidebar div, .sidebar span {
     color: var(--color-main-text) !important;
     opacity: 1;
 }
-
 
 /* making icons the same width so text aligns */
 .sidebar .fas:first-of-type {
@@ -82,349 +118,95 @@ html, body {
 
 }
 
-.list-item div {
-    margin-left: auto !important;
-    padding-right: var(--base-size-13) !important;
-}
-
-.sidebar span:hover  { /* header */
-  /*background-color: red !important;*/
-
-}
-
-.side-bar div {
-    font-size: 12px !important;
-}
-
-a.list-item {
-    font-size: 12px !important;
-}
-
-.folders .list-item-container{
-    font-size: var(--font-size) !important;
-    line-height: var(--element-height) !important;
-    min-height: var(--element-height);
-    background-color: var(--color-main-background);
-}
-
-.folders .list-item-container.selected {
-	background-color: var(--color-background-dark) !important;
-}
-
+/* Make icons the same color as text */
 .sidebar [class^="icon-"],.sidebar [class*=" icon-"]{
-  color:var(--color-main-text) !important;
+    color:var(--color-main-text) !important;
 }
 
-
-.eRzPp,.xOaMI {
-  background: var(--color-primary-light) !important;
+/* Right Justify Notebook Counters */
+.sidebar .list-item div {
+    margin-left: auto !important;
+    margin-right: 10px;
+    color: var(--color-main-text) !important;
 }
-.sidebar .list-item-container.eRzPp:hover {
-  background: var(--color-primary-light) !important;
-}
-
-.sidebar .list-item-container:hover{
-  background-color: var(--color-background-hover) !important;
-}
-.sidebar .list-item-container:hover *
-{
-  background-color: var(--color-background-hover) !important;
-}
-
-
-
-.list-item-container.jQSWcM {
-    background-color: var(--color-background-dark) !important;
-}
-
-
-/* folders */
-.folders > div:first-of-type > a {
-  text-transform: uppercase !important;
-  color: var(--color-main-text);
-}
-
-
-
-.sidebar,
-.sidebar div,
-.sidebar div a {
-  color: var(--color-main-text) !important;
-}
-.sidebar div {
- /* line-height: 40px !important;
-  min-height: 40px;*/
-}
-
-
-
-a.list-item:hover {
-  background-color: var(--color-background-hover) !important;
-}
-
-
-.sidebar .folders .list-item div { /*Number on the right */
- margin-right: 5px;
-   color: var(--color-main-text) !important;
-   opacity: 0.8 !important
-}
-
-
-
-
-/**************************************************************************************************
- *  Tags 
- *************************************************************************************************/
-
-/* global tag style */
-.css-19qsih1-multiValue,
-.tags a.list-item,
-.tag-list span {
- /* background-color: var(--color-background-hover) !important;*/
-  border-radius: var(--border-radius) !important;
-  color: var(--font-size) !important;
-  flex: 0 !important;
-  font-weight: normal !important;
-  padding: 0px 6px !important;
-  min-height: 0px !important;
-  line-height: 0px !important;
-
-}
-.tags {
-      margin-left: 10px;
-}
-.tags .list-item-container {
-  height: auto !important;
-  margin-bottom: 2px;
-      height: auto !important;
-    margin-bottom: 2px;
-    display: inline-block;
-    background: var(--color-background-hover) !important;
-    padding: 0 !important;
-    margin: 0 5px;
-    border-radius: 5px;
-     margin: 5px 5px;
-     min-height: 0px !important;
-    padding-bottom: 3px !important;
-    padding: 10px 3px !important;
-
-}
-.tags .list-item-container.xOaMI {
-  
-     background: var(--color-background-darker) !important;
-
-}
-
-.tags .list-item-container:hover *
-{
-  background-color: transparent !important;
-}
-
-
-
- 
-
-.tags .list-item-container:hover {
-   background: var(--color-background-dark) !important;
-}
-
-.tags .list-item-container i{
-  display: none ! important;
-}
-.tags .list-item-container a div {
-  font-size: 10px !important;
- /* line-height: 20px !important;
-  min-height: 0px !important;*/
-  margin-top: 4px;
-}
-/* Add or remove tag */
-.css-15g31wo,
-.css-1n5lu3i,
-.css-d0yvbe {
-  border-radius: var(--tag-radius) !important;
-  color: var(--tag-font-color) !important;
-      line-height: 20px;
-}
-
-
 
 
 /**************************************************************************************************
  *  Sync Button
  *************************************************************************************************/
 
-
-/* synchronize area */
-.sidebar > div:last-of-type {
-  background-color: var(--overlay-dark2) !important;
-  text-align: center !important;
-}
-
 /* synchronize button */
-.sidebar > div:last-of-type > button {
-  border: none !important;
-  background-color: var(--color-background-hover) !important;
-  color: var(--color-primary);
+.sidebar div:last-child > button {
+    border: none !important;
+    background-color: var(--color-background-darker) !important;
+    color: var(--color-main-text);
 }
-.sidebar > div:last-of-type > button:hover {
-  background-color: var(--color-background-dark ) !important;
+.sidebar div:last-child > button:hover {
+    background-color: var(--color-background-dark) !important;
 }
+
 .sidebar > div:last-of-type > button span {
-  color: var(--overlay-light5) !important;
   text-transform: uppercase !important;
-}
-
-.sc-fznWOq.krSDAh,.krSDAh  {
-      font-size: 12px !important;
-}
-
-/***
-Search Bar 
-
-**/
-
-.rli-noteList > div > div > div:first-child {
-	background-color: var(--color-main-background);
-
 }
 
 /**************************************************************************************************
  *  Note List
  *************************************************************************************************/
 
-.note-list > div > a:focus,
-.note-list a.list-item:focus
-{
-   /*background-color: var(--color-primary-light)!important;*/
-}
-
-
 .note-list {
     background-color: var(--color-main-background) !important;
+    border: none;
     opacity: 1;
-	width: 100% !important;
-	padding: 10px 0;
+    width: 100% !important;
+    padding: 0;
 }
 
-
-.note-list .list-item-container:hover, .folders .list-item-container:hover  {
-  border: none !important;
-  background: var(--color-background-hover);
+.note-list > div > div > div {
+    border: none;
 }
 
 .note-list .list-item-container{
     border: none !important;
-    z-index: 1;
     padding: 10px;
-    height: var(--element-height);
+    height: 20px;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    align-items: center;
     background-color: var(--color-main-background);
-    font-size: var(--font-size) !important;
-    color: var(--color-main-text) !important;
-    text-shadow: unset;
+    width: 100%;
 }
 
-.note-list .list-item-container.selected {
-	background-color: var(--color-primary-light)!important;
-} 
-
-.note-list .list-item-container div:before {
-  border:none !important;
-}
-
-.item-list.note-list .list-item-container:nth-child(2) {
-  overflow: hidden;
-}
-
-.item-list.note-list .list-item-container:nth-last-child(2) {
-  overflow: hidden;
-}
-
-
-.item-list.note-list .list-item-container:before {
+.note-list .list-item-container > * {
+    margin: 5px !important;
+    padding: 0 !important;
     border: none !important;
+    font-size: var(--font-size) !important;
 }
-
-
-.note-list .list-item-container * {
-  background: transparent !important;
-  font-size: var(--font-size) !important;
-}
-
-
-.note-list .list-item-container div {
-  background-color: transparent !important;
-}
-
 
 .note-list input[type="checkbox"] {
-    opacity: 1 !important;
-    padding: 7px 6px;
-    font-size: var(--font-size) !important;
-    background-color: var(--color-main-background);
-    color: var(--color-main-text);
-    border: 2px solid transparent;
-    outline: none;
-    border-radius: var(--border-radius);
-    margin: 5px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
+    margin: 0 !important;
+    padding: 0 !important;
     appearance: none;
-    outline: none;
-    width: 0;
-    height: 0;
-    box-shadow: none;
-    font-size: 2em;
-    opacity: 0.1;
-    /* display: none; */
-    outline: 0px solid transparent;
-    width: 20px !important;
-    height: 20px !important;
-    margin-right: 0 !important;
+    min-width: 15px;
+    min-height: 15px;
 }
 
-.note-list input[type="checkbox"i]:before {
-    content: "";
+.note-list input[type="checkbox"]:before {
     display: inline-block;
-    vertical-align: bottom;
-    width: 14px;
-    height: 14px;
-    border-style: solid;
-    border-width: 2px;
+    content: "";
+    text-align: center;
+    border: 2px solid var(--color-border-dark);
     border-radius: var(--border-radius);
-    border-color: var(--color-border-dark);
-    position: absolute;
-    top: 11px;
-    left: 11px;
-
-        top: calc(var(--element-height)/2 - 14px + 4px); /* 14 = width, 4px = 2 x border-width*/
-    left: calc(var(--element-height)/2 - 14px + 4px);
+    min-width: 15px;
+    min-height: 15px;
 }
-
 
 .note-list  input[type="checkbox"]:checked:before {
-  content: "✓";
-  color: var(--color-main-text);;
-  text-align: center;
-    border-color: var(--color-primary-light);
-    font-size: 14px;
+    content: "✓";
     font-weight: bold;
-    line-height: 14px;
-    color: var(--color-main-text);
   }
-
-
-.note-list a.list-item span, .tags .list-item {
-    /* font-family: "IBM Plex Mono" !important; */
-    /* font-size: 12px !important; */
-    color: var(--light-grey) !important;
-}
-
-
-
-
-
 
 
 
@@ -432,32 +214,43 @@ Search Bar
  *  Search
  *************************************************************************************************/
 
+
+
+/***
+Search Bar
+
+**/
+
+.rli-noteList > div > div > div:first-child {
+    background-color: var(--color-main-background);
+
+}
 /* global search */
 .rli-noteList > div > div > div:first-child  {
-	height: 50px !important;
-	background: var(--color-main-background) !important;
-	padding: 10px;
-	border-bottom: 2px solid var(--color-border) !important;
-	align-items: center;
+    height: 50px !important;
+    background: var(--color-main-background) !important;
+    padding: 10px;
+    border-bottom: 2px solid var(--color-border) !important;
+    align-items: center;
 
 }
 
 .search-bar{
-	border: medium none !important;
-  	box-sizing: border-box;
-  	color: var(--color-main-text);
-  	cursor: text;
-  	font-size: 100%;
-  	margin: 0;
-  	padding: 0 15px;
-  	width: 100%;
-  	overflow: hidden;
-  	white-space: nowrap;
-  	text-overflow: ellipsis;
-  	outline: none;
-  	border-radius: var(--border-radius);
-  	background-color: var(--color-main-background);
-	box-shadow: 0 0 2px var(--color-box-shadow);
+    border: medium none !important;
+      box-sizing: border-box;
+      color: var(--color-main-text);
+      cursor: text;
+      font-size: 100%;
+      margin: 0;
+      padding: 0 15px;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      outline: none;
+      border-radius: var(--border-radius);
+      background-color: var(--color-main-background);
+    box-shadow: 0 0 2px var(--color-box-shadow);
     text-shadow: unset;
 }
 
@@ -490,58 +283,5 @@ opacity: .5;
 .rli-noteList > div > div > div:first-child button span {
     color: var(--color-main-text) !important;
     font-weight: bold !important;
-
-}
-
-
-
-
-
-/**************************************************************************************************
- *  PANELS
- *************************************************************************************************/
-
-/* general panel styles */
-.rli-root > .resizableLayoutItem > div {
-  min-width: 150px !important;
-  width: 100% !important;
-}
-.rli-root > .resizableLayoutItem > .resizableLayoutItem > div {
-  height: 100% !important;
-  width: 100% !important;
-}
-
-/* remove border from plugin iframes */
-div.resizableLayoutItem iframe {
-  border-bottom: none !important;
-}
-
-/* highlight splitters (vertical and horizontal) while dragging */
-.resizableLayoutItem > span > div {
-  z-index: 100 !important;
-  transition: 0.5s;
-}
-.resizableLayoutItem > span > div:hover,
-.resizableLayoutItem > span > div:active {
-  background: var(--primary);
-  opacity: var(--opacity-0-5);
-}
-
-.gkjdjq {
-    border-right: 0px solid transparent !important;
-        background-color: var(--color-background-dark) !important;
-  }
-
-
-/* scrollbars */
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-border-dark) !important;
-  border-radius: var(--scroll-radius) !important;
-  scrollbar-color: var(--color-border-dark) transparent;
-  scrollbar-width: thin;
-}
-
-::-webkit-scrollbar-track,::-webkit-scrollbar-track-piece         { 
-  background-color: transparent; !important;
 
 }
