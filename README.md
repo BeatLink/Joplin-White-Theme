@@ -1,5 +1,10 @@
 # Joplin Plugin
 
+A white theme for Joplin, for those of us who aren't vampires ;)
+Based on https://github.com/LongBay/Joplin-Light-Theme
+
+
+
 This is a template to create a new Joplin plugin.
 
 The main two files you will want to look at are:

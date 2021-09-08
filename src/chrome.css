@@ -1,12 +1,9 @@
-/* JOPLIN WANAKA UI - v0.4.0 */
-/* https://github.com/benji300/joplin-wanaka-ui/blob/master/theme/userchrome.css */
 /**************************************************************************************************
  *  VARIABLES
  *************************************************************************************************/
-
  :root {
-    --color-main-text: #222;
-    --color-main-background: #fff;
+    --color-main-text: #222222;
+    --color-main-background: #ffffff;
     --color-main-background-translucent: rgba(255, 255, 255, 1);
     --color-background-hover: #f5f5f5;
     --color-background-dark: #ededed;
@@ -25,16 +22,13 @@
     --color-text-maxcontrast: #767676;
     --color-text-light: #222;
     --color-text-lighter: #767676;
-    --color-loading-light: #ccc;
-    --color-loading-dark: #444;
     --color-box-shadow: rgba(77, 77, 77, 0.5);
     --color-border: #ededed;
     --color-border-dark: #dbdbdb;
     --border-radius: 3px;
     --border-radius-large: 10px;
     --border-radius-pill: 100px;
-    --font-face: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Cantarell, Ubuntu, 'Helvetica Neue', Arial, 'Noto Color Emoji', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    --default-font-size: 13px;
+    --font-face: "Noto Sans", sans-serif;
     --font-size: 13px;
     --default-line-height: 24px;
     --animation-quick: 100ms;
@@ -43,29 +37,19 @@
     --element-height:35px;
 }
 
-mark {
-  color: var(--color-main-text);
-    font-weight: bold;
-
-}
-
+/**************************************************************************************************
+* GENERAL
+**************************************************************************************************/
 
 html, body {
   background-color: var(--color-main-background);
-  font-weight: normal;
-  font-size: var(--default-font-size);
   line-height: var(--default-line-height);
-  font-family: var(--font-face);
   color: var(--color-main-text);
+  font-weight: normal;
+  font-size: var(--font-size);
+  font-family: var(--font-face);
 }
 
-a {
-    font-family: var(--font-face) !important;
-}
-
-div, span, a {
-    font-family: var(--font-face);
-}
 /**************************************************************************************************
  *  SIDEBAR
  *************************************************************************************************/
@@ -79,29 +63,15 @@ div, span, a {
 } */
 
 
-
 .sidebar {
   background-color: var(--color-main-background) !important;
-  border-right: 1px solid var(--color-border);
   color: var(--color-main-text) !important;
-}
-
-.rli-sidebar {
-    border-right: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
 }
 
 .sidebar .folders .list-item, .sidebar div, .sidebar span {
-    color: var(--white) !important;
-    font-size: var(--font-size) !important;
-    margin-bottom: var(--base-size-1);
+    color: var(--color-main-text) !important;
     opacity: 1;
-}
-
-.sidebar div div {
-    font-size: var(--font-size) !important;
-  /*  line-height: 40px !important;
-  min-height: 40px;*/
-
 }
 
 
@@ -137,6 +107,10 @@ a.list-item {
     background-color: var(--color-main-background);
 }
 
+.folders .list-item-container.selected {
+	background-color: var(--color-background-dark) !important;
+}
+
 .sidebar [class^="icon-"],.sidebar [class*=" icon-"]{
   color:var(--color-main-text) !important;
 }
@@ -149,7 +123,7 @@ a.list-item {
   background: var(--color-primary-light) !important;
 }
 
-.sidebar .list-item-container:hover {
+.sidebar .list-item-container:hover{
   background-color: var(--color-background-hover) !important;
 }
 .sidebar .list-item-container:hover *
@@ -208,7 +182,7 @@ a.list-item:hover {
 .tag-list span {
  /* background-color: var(--color-background-hover) !important;*/
   border-radius: var(--border-radius) !important;
-  color: var(--default-font-size) !important;
+  color: var(--font-size) !important;
   flex: 0 !important;
   font-weight: normal !important;
   padding: 0px 6px !important;
@@ -304,7 +278,15 @@ a.list-item:hover {
       font-size: 12px !important;
 }
 
+/***
+Search Bar 
 
+**/
+
+.rli-noteList > div > div > div:first-child {
+	background-color: var(--color-main-background);
+
+}
 
 /**************************************************************************************************
  *  Note List
@@ -313,26 +295,17 @@ a.list-item:hover {
 .note-list > div > a:focus,
 .note-list a.list-item:focus
 {
-   background-color: var(--color-primary-light)!important;
+   /*background-color: var(--color-primary-light)!important;*/
 }
 
 
 .note-list {
-    background-color: var(--color-background-dark) !important;
-    padding:  10px;
+    background-color: var(--color-main-background) !important;
     opacity: 1;
-
+	width: 100% !important;
+	padding: 10px 0;
 }
 
-
-.note-list .list-item-container {
-    padding: 10px;
-    height: var(--element-height);
-}
-
-.note-list .list-item-container div:before {
-  border:none !important;
-}
 
 .note-list .list-item-container:hover, .folders .list-item-container:hover  {
   border: none !important;
@@ -342,25 +315,28 @@ a.list-item:hover {
 .note-list .list-item-container{
     border: none !important;
     z-index: 1;
-    padding: 0px;
+    padding: 10px;
     height: var(--element-height);
     position: relative;
     background-color: var(--color-main-background);
-    font-size: var(--default-font-size) !important
-    color:var(--color-main-text) !important;
-    box-shadow: 0 0 2px var(--color-box-shadow);
+    font-size: var(--font-size) !important;
+    color: var(--color-main-text) !important;
     text-shadow: unset;
 }
 
+.note-list .list-item-container.selected {
+	background-color: var(--color-primary-light)!important;
+} 
+
+.note-list .list-item-container div:before {
+  border:none !important;
+}
+
 .item-list.note-list .list-item-container:nth-child(2) {
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
   overflow: hidden;
 }
 
 .item-list.note-list .list-item-container:nth-last-child(2) {
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
   overflow: hidden;
 }
 
@@ -456,34 +432,32 @@ a.list-item:hover {
  *  Search
  *************************************************************************************************/
 
-
-
-
 /* global search */
-div[height="50"] {
-  background: var(--color-background-dark) !important;
-   padding: 10px;
-  border-right: 1px solid var(--color-border);
+.rli-noteList > div > div > div:first-child  {
+	height: 50px !important;
+	background: var(--color-main-background) !important;
+	padding: 10px;
+	border-bottom: 2px solid var(--color-border) !important;
+	align-items: center;
 
 }
 
-div[height="50"] input {
-  border: medium none !important;
-  box-sizing: border-box;
-  color: var(--color-main-text);
-  cursor: text;
-  font-size: 100%;
-  margin: 0;
-  padding: 0 15px;
-  width: 100%;
-  min-height: var(--element-height);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  outline: none;
-  border-radius: var(--border-radius);
-  background-color: var(--color-main-background);
-      box-shadow: 0 0 2px var(--color-box-shadow);
+.search-bar{
+	border: medium none !important;
+  	box-sizing: border-box;
+  	color: var(--color-main-text);
+  	cursor: text;
+  	font-size: 100%;
+  	margin: 0;
+  	padding: 0 15px;
+  	width: 100%;
+  	overflow: hidden;
+  	white-space: nowrap;
+  	text-overflow: ellipsis;
+  	outline: none;
+  	border-radius: var(--border-radius);
+  	background-color: var(--color-main-background);
+	box-shadow: 0 0 2px var(--color-box-shadow);
     text-shadow: unset;
 }
 
@@ -497,7 +471,7 @@ opacity: .5;
     height: var(--element-height);
     display: none;
 }
-div[height="50"] button {
+.rli-noteList > div > div > div:first-child button {
   background: transparent  !important;
   color: var(--color-main-text) !important;
       padding: 20px 0;
@@ -508,12 +482,12 @@ div[height="50"] button {
     padding: 0;
     margin-top: 7px;
 }
-div[height="50"] button:hover {
+.rli-noteList > div > div > div:first-child button:hover {
   opacity: 1;
   background-color: rgba(0,0,0,0.1) !important;
 }
 
-div[height="50"] button span {
+.rli-noteList > div > div > div:first-child button span {
     color: var(--color-main-text) !important;
     font-weight: bold !important;
 
