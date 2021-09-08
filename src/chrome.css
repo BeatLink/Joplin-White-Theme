@@ -110,6 +110,10 @@ mark {
     color: var(--color-main-text) !important;
 }
 
+.sidebar > div > div:nth-child(1), .sidebar > div > div:nth-child(3) {
+    padding: 5px 0;
+}
+
 /* Make sidebar headings visible */
 .sidebar .list-item, .sidebar div, .sidebar span {
     color: var(--color-main-text) !important;
@@ -167,7 +171,7 @@ mark {
     border: none;
     opacity: 1;
     width: 100% !important;
-    padding: 0;
+    padding: 3px 0;
 }
 
 
@@ -185,7 +189,7 @@ mark {
 }
 
 .list-item-container::before {
-    border: none;
+    border: none !important;
 }
 
 .note-list .list-item-container > * {
@@ -225,10 +229,9 @@ mark {
  *************************************************************************************************/
 
 .rli-noteList > div > div > div:first-child  {
-    height: calc(var(--element-height) + 3px) !important;
+    height: 50px !important;
     background-color: var(--color-main-background) !important;
     padding: 10px;
-    border-bottom: 2px solid var(--color-border) !important;
     align-items: center;
 }
 
