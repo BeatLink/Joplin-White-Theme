@@ -12,3 +12,7 @@ It has the following features:
 - CSS cleanup and refactoring
 
 The homepage forum can be found here: https://discourse.joplinapp.org/t/joplin-white-theme
+
+# Installation
+
+- Install "White Theme" from the plugins page in joplin.
