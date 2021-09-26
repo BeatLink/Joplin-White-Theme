@@ -1,3 +1,10 @@
-strong {
-	border: 1px solid red;
+h1, h2, h3 {
+	margin-top: 1.75em;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
