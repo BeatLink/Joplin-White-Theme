@@ -2,7 +2,7 @@
 	"manifest_version": 1,
 	"id": "com.github.BeatLink.joplin-plugin-white-theme",
 	"app_min_version": "2.0",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"name": "White Theme",
 	"description": "A white theme for joplin",
 	"author": "BeatLink",
