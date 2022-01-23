@@ -96,7 +96,7 @@ html, body {
 }
 
 /* Show heading icons depending on settings */
-.icon-notebooks, .icon-tags {
+.sidebar .icon-notebooks, .sidebar .icon-tags {
     display: var(--heading-icon-visibility);
 }
 
@@ -342,6 +342,28 @@ mark {
     background-color: var(--color-background) !important;
 }
 
+.tag-bar .button {
+    background-color: var(--color-background)
+}
+
+.tag-bar .button span {
+    color: var(--color-accent)
+}
+
+.tag-bar .button:hover {
+    background-color: var(--color-accent) !important;
+}
+
+.tag-bar .button:hover span {
+    color: var(--color-background) !important;
+}
+
+.tag-bar .tag-list span {
+    color: var(--color-text) !important;
+    background-color: var(--color-border) !important;
+    border-radius: 3px !important;
+    padding: 0 10px !important;
+}
 /****************************************************************************************************************************************************
  * LIST ITEMS                                                                                                                                       *
  ***************************************************************************************************************************************************/
