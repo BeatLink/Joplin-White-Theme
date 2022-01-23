@@ -1,11 +1,32 @@
+:root {
+    --color-text: #222222;
+    --color-background: #ffffff;
+    --color-border: #ededed;
+    --color-accent: <<ACCENT_COLOR>>;
+    --color-item-selected: #ededed;
+    --font-size: <<FONT_SIZE>>px;
+    --font-size-heading: <<HEADING_FONT_SIZE>>px;
+    --height-item: <<ITEM_HEIGHT>>px;
+    --heading-icon-visibility: <<HEADING_ICON_VISIBILITY>>;
+    --all-notes-visibility: <<ALL_NOTES_VISIBILITY>>;
+    --show-empty-folder-icons: <<SHOW_EMPTY_FOLDER_ICONS>>;
+    --sidebar-heading-spacing: <<SIDEBAR_HEADING_SPACING>>px;
+}
+
 h1, h2, h3 {
 	margin-top: 1.5em;
 	margin-bottom: 0;
 	padding: 0;
-	color: <<ACCENT_COLOR>>;
+	color: var(--color-accent) ;
 }
 
 p, ul, ol {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
+}
+
+mark {
+    background-color: var(--color-accent) !important;
+	color: var(--color-background);
+    padding: 3px;
 }

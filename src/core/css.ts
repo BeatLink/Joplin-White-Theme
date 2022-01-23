@@ -30,7 +30,14 @@ export async function loadNote(){
     const tempNoteCssFilePath = installDir + "/css/tempnote.css"
     var cssString = await fs.readFile(originalNoteCssFilePath, 'utf8');
     var replacementDict = {
+        "<<ITEM_HEIGHT>>": await joplin.settings.value("itemHeight"),
+        "<<FONT_SIZE>>": await joplin.settings.value("fontSize"),
+        "<<HEADING_FONT_SIZE>>": await joplin.settings.value("headingFontSize"),
         "<<ACCENT_COLOR>>": await joplin.settings.value("accentColor"),
+        "<<HEADING_ICON_VISIBILITY>>": await joplin.settings.value("headingIconVisibility"),
+        "<<ALL_NOTES_VISIBILITY>>": await joplin.settings.value("allNotesVisibility"),
+        "<<SHOW_EMPTY_FOLDER_ICONS>>": await joplin.settings.value("showEmptyFolderIcons"),
+        "<<SIDEBAR_HEADING_SPACING>>": await joplin.settings.value("sidebarHeadingSpacing")
     }
     for (let key in replacementDict){
         cssString = cssString.replace(key, replacementDict[key])
