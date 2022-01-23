@@ -156,7 +156,7 @@ html, body {
  *  Sync Button                                                                                                                                     *
  ***************************************************************************************************************************************************/
 /* Setup synchronize message color */
-.sidebar div:last-child * {
+.sidebar > div:last-child * {
     color: var(--color-text) !important;
     opacity: 1;
 }
