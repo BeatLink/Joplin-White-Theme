@@ -1,0 +1,369 @@
+/****************************************************************************************************************************************************
+ *  VARIABLES                                                                                                                                       *
+ ***************************************************************************************************************************************************/
+
+ :root {
+    --color-text: #222222;
+    --color-background: #ffffff;
+    --color-border: #ededed;
+    --color-accent: <<ACCENT_COLOR>>;
+    --color-item-selected: #ededed;
+    --font-size: <<FONT_SIZE>>px;
+    --font-size-heading: <<HEADING_FONT_SIZE>>px;
+    --height-item: <<ITEM_HEIGHT>>px;
+    --heading-icon-visibility: <<HEADING_ICON_VISIBILITY>>;
+    --all-notes-visibility: <<ALL_NOTES_VISIBILITY>>
+}
+
+/****************************************************************************************************************************************************
+* GENERAL                                                                                                                                           *
+****************************************************************************************************************************************************/
+
+/* Set default font and color attributes */
+html, body {
+    background-color: var(--color-background) !important;
+    color: var(--color-text);
+    line-height: 24px;
+    font-weight: normal;
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* Set Scrollbar Wdith */
+::-webkit-scrollbar{
+    width: 4px !important;
+}
+
+/****************************************************************************************************************************************************
+ * ALL PANELS                                                                                                                                       *
+ ***************************************************************************************************************************************************/
+
+/* Set borders and minimum widths for all panels */
+.rli-root > .resizableLayoutItem {
+    border-right: 2px solid var(--color-border) !important;
+    min-width: 200px !important;
+}
+
+/****************************************************************************************************************************************************
+ *  SIDEBAR                                                                                                                                         *
+ ***************************************************************************************************************************************************/
+
+/* Set sidebar colors */
+.sidebar {
+    background-color: var(--color-background) !important;
+    color: var(--color-text) !important;
+}
+
+/* Headings --------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Add space above and below sidebar headings */
+.sidebar > div > div:nth-child(1), .sidebar > div > div:nth-child(3) {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Set Sidebar heading font size, color and capitalizations */
+.sidebar .enXwOp {
+    color: var(--color-accent) !important;
+    font-size: var(--font-size-heading) !important;
+    text-transform: capitalize;
+}
+
+/* All Notes Menu ---------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Hide the all-notes option depending on settings */
+.all-notes {
+    display: var(--all-notes-visibility) !important;
+}
+
+/* Icons ------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Set Icon Colors */
+.sidebar i, .sidebar i::before {
+    opacity: 1 !important;
+    color: var(--color-accent) !important;
+}
+
+/* Set icon colors when hovered*/
+.sidebar .list-item-container:hover i, .sidebar .list-item-container:hover i::before {
+    color: var(--color-background) !important;
+}
+
+/* Show heading icons depending on settings */
+.icon-notebooks, .icon-tags {
+    display: var(--heading-icon-visibility);
+}
+
+/* Set color of add notebook icon */
+.fa-plus:before {
+    color: var(--color-accent);    
+}
+
+/* Show a folder icon beside all notebooks */
+.folders .fa-caret-right::before {
+    content: "\f07b";
+}
+
+/* Show an open folder icon beside all expanded notebooks */
+.folders .fa-caret-down::before {
+    content: "\f07c";
+}
+
+/* Show a tag icon beside all tags */
+.tags .fa-caret-right::before {
+    content: "\f02b";
+    visibility: visible;
+}
+
+/* List Items */
+.sidebar .list-item-container span {
+    margin-left: 5px !important;
+}
+
+/* Note Counts ------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Set note count label colors */
+.note-count-label {
+    opacity: 1;
+    color: var(--color-text) !important;
+    font-size: var(--font-size);
+}
+
+/* Set note count label colors on hover */
+.list-item-container:hover .note-count-label {
+    color: var(--color-background) !important;
+}
+
+/* Right Justify Notebook Count labels */
+.sidebar .list-item div {
+    margin-left: auto !important;
+    margin-right: 10px;
+}
+
+/****************************************************************************************************************************************************
+ *  Sync Button                                                                                                                                     *
+ ***************************************************************************************************************************************************/
+
+/* Setup synchronize button background */
+.sidebar div:last-child > button {
+    background-color: var(--color-border) !important;
+    font-size: var(--font-size);
+    border: none !important;
+}
+
+/* Setup synchronize button color */
+.sidebar div:last-child > button span {
+    color: var(--color-text) !important;
+}
+
+/* Set Background color for sync button on hover */
+.sidebar div:last-child > button:hover {
+    background-color: var(--color-accent) !important;
+}
+
+/* Set font color for sync button on hover */
+.sidebar div:last-child > button:hover span {
+    color: var(--color-background) !important;
+}
+
+/****************************************************************************************************************************************************
+ *  Search                                                                                                                                          *
+ ***************************************************************************************************************************************************/
+
+ /* Remove borders between note list and search/toolbar */
+ .rli-noteList > div > div > div {
+    border: none !important;
+}
+
+/* Search Area ------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Setup Search area */
+.rli-noteList > div > div > div:first-child  {
+    height: 50px !important;
+    background-color: var(--color-background) !important;
+    padding: 10px;
+    align-items: center;
+}
+
+/* Search Bar -------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Setup Border for search bar*/
+.search-bar input[type="text"] {
+    border: 2px solid var(--color-border) !important;
+    border-radius: 5px !important;
+    font-size: var(--font-size);
+}
+
+/* Ensures that searchbar fills search area when focused */
+.search-bar {
+    width: 100%;
+}
+
+/* Align search bar button to Center*/
+.search-bar > div {
+    align-items: center;
+}
+
+/* Adds margin to the search / search clear button */
+.search-bar div button {
+    margin: 5px;
+}
+
+/* Hide the search icon*/
+.rli-noteList span.icon-search {
+    display: none !important;
+    font-size: var(--font-size);
+}
+
+/* Toolbar Buttons --------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Setup toolbar buttons */
+.rli-noteList > div > div > div:first-child button {
+    background: var(--color-background)  !important;
+    opacity: 1;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+}
+
+/* Set Sort Button Borders */
+.sort-order-field-button, .sort-order-reverse-button {
+    border: 2px solid var(--color-border) !important;
+}
+
+/* Merge sort button border */
+.sort-order-reverse-button {
+    border-left-width: 0px !important;
+}
+
+/* Setup toolbar button icon colors */
+.rli-noteList > div > div > div:first-child button span {
+    opacity: 1;
+    color: var(--color-accent) !important;
+    font-size: var(--font-size);
+}
+
+/* Setup toolbar button when hovered */
+.rli-noteList > div > div > div:first-child button:hover {
+    opacity: 1;
+    background-color: var(--color-accent) !important;
+}
+
+/* Setup toolbar button icon colors when hovered */
+.rli-noteList > div > div > div:first-child button:hover span {
+    opacity: 1;
+    color: var(--color-background) !important;
+}
+
+mark {
+    background-color: var(--color-accent) !important;
+    padding: 3px;
+}
+
+/****************************************************************************************************************************************************
+ *  Note List                                                                                                                                       *
+ ***************************************************************************************************************************************************/
+
+ /* Set background for empty noteslist */
+.rli-noteList > div > div > div:last-child {
+    background-color: var(--color-background) !important;
+}
+
+/* Set default settings for note list */
+.note-list {
+    border: none;
+    opacity: 1;
+    width: 100% !important;
+    background-color: var(--color-background) !important;
+    padding: 3px 0;
+}
+
+.note-list input[type="checkbox"] {
+    margin: 0 !important;
+    margin-right: 5px !important;
+    padding: 0 !important;
+    appearance: none;
+    min-width: 15px;
+    min-height: 15px;
+}
+
+.note-list .list-item-container:hover input[type="checkbox"]:before {
+border: 2px solid var(--color-background) !important;
+}
+
+.note-list input[type="checkbox"]:before {
+    display: inline-block;
+    content: "";
+    text-align: center;
+    border: 2px solid var(--color-accent);
+    border-radius: 5px;
+    min-width: 15px;
+    min-height: 15px;
+}
+
+.note-list input[type="checkbox"]:checked:before {
+    content: "✓";
+    font-weight: bold;
+    color: inherit;
+    border: 2px solid;
+}
+
+.note-list .todo-completed {
+    opacity: 0.3 !important;
+}
+
+
+/****************************************************************************************************************************************************
+ * EDITOR                                                                                                                                           *
+ ***************************************************************************************************************************************************/
+ 
+ .rli-editor > div > div {
+    background-color: var(--color-background) !important;
+}
+
+/****************************************************************************************************************************************************
+ * LIST ITEMS                                                                                                                                       *
+ ***************************************************************************************************************************************************/
+
+/* Set height of list items */
+
+
+.list-item-container {
+    border-radius: 5px !important;
+    margin: 5px auto !important;
+    min-height: var(--height-item); 
+    border: none !important;
+    width: 95%;
+}
+
+.list-item-container::before {
+    border: none !important;
+}
+
+.list-item-container a {
+    opacity: 1 !important;
+}
+
+.list-item-container span {
+    font-size: var(--font-size) !important;
+    color: var(--color-text) !important;
+    opacity: 1 !important;
+}
+
+.list-item-container:hover span {
+    color: var(--color-background) !important;
+}
+
+/* Change color of selected list item */
+.list-item-container.selected {
+    background-color: var(--color-item-selected) !important;
+}
+
+/* change color of hovered list item */
+.list-item-container.selected:hover {
+    background-color: var(--color-accent) !important;
+}
+
+.list-item-container:hover {
+    background-color: var(--color-accent) !important;
+    color: var(--color-background) !important;
+}

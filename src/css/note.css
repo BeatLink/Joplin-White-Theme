@@ -2,6 +2,7 @@ h1, h2, h3 {
 	margin-top: 1.5em;
 	margin-bottom: 0;
 	padding: 0;
+	color: <<ACCENT_COLOR>>;
 }
 
 p, ul, ol {
