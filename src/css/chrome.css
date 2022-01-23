@@ -87,12 +87,12 @@ html, body {
 
 /* Set icon colors when selected*/
 .sidebar .list-item-container.selected i, .sidebar .list-item-container.selected i::before {
-    color: var(--color-background) !important;
+    color: var(--color-accent) !important;
 }
 
 /* Set icon colors when hovered*/
-.sidebar .list-item-container.selected:hover i, .sidebar .list-item-container.selected:hover i::before {
-    color: var(--color-accent) !important;
+.sidebar .list-item-container:hover i, .sidebar .list-item-container:hover i::before {
+    color: var(--color-background) !important;
 }
 
 /* Show heading icons depending on settings */
@@ -138,12 +138,12 @@ html, body {
 
 /* Set note count label colors on hover */
 .list-item-container.selected .note-count-label {
-    color: var(--color-background) !important;
+    color: var(--color-text) !important;
 }
 
 /* Set note count label colors on hover */
-.list-item-container.selected:hover .note-count-label {
-    color: var(--color-text) !important;
+.list-item-container:hover .note-count-label {
+    color: var(--color-background) !important;
 }
 
 /* Right Justify Notebook Count labels */
@@ -315,11 +315,11 @@ mark {
 }
 
 .note-list .list-item-container.selected input[type="checkbox"]:before {
-    border: 2px solid var(--color-background) !important;
+    border: 2px solid var(--color-accent) !important;
 }
 
 .note-list .list-item-container:hover input[type="checkbox"]:before {
-    border: 2px solid var(--color-accent) !important;
+    border: 2px solid var(--color-background) !important;
 }
 
 .note-list input[type="checkbox"]:checked:before {
@@ -396,19 +396,19 @@ mark {
 
 /* Change color of selected list item */
 .list-item-container.selected {
-    background-color: var(--color-accent) !important;
+    background-color: var(--color-border) !important;
 }
 
 /* Change color of selected list item */
 .list-item-container.selected span {
-    color: var(--color-background) !important;
+    color: var(--color-text) !important;
 }
 
 .list-item-container:hover {
-    background-color: var(--color-border) !important;
+    background-color: var(--color-accent) !important;
     color: var(--color-text) !important;
 }
 
 .list-item-container:hover span {
-    color: var(--color-text) !important;
+    color: var(--color-background) !important;
 }
