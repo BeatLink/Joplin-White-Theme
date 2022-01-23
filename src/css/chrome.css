@@ -12,7 +12,9 @@
     --font-size-heading: <<HEADING_FONT_SIZE>>px;
     --height-item: <<ITEM_HEIGHT>>px;
     --heading-icon-visibility: <<HEADING_ICON_VISIBILITY>>;
-    --all-notes-visibility: <<ALL_NOTES_VISIBILITY>>
+    --all-notes-visibility: <<ALL_NOTES_VISIBILITY>>;
+    --show-empty-folder-icons: <<SHOW_EMPTY_FOLDER_ICONS>>;
+    --sidebar-heading-spacing: <<SIDEBAR_HEADING_SPACING>>px;
 }
 
 /****************************************************************************************************************************************************
@@ -57,8 +59,8 @@ html, body {
 
 /* Add space above and below sidebar headings */
 .sidebar > div > div:nth-child(1), .sidebar > div > div:nth-child(3) {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: var(--sidebar-heading-spacing);
+    margin-bottom: calc(var(--sidebar-heading-spacing) * 0.5);
 }
 
 /* Set Sidebar heading font size, color and capitalizations */
@@ -83,9 +85,14 @@ html, body {
     color: var(--color-accent) !important;
 }
 
-/* Set icon colors when hovered*/
-.sidebar .list-item-container:hover i, .sidebar .list-item-container:hover i::before {
+/* Set icon colors when selected*/
+.sidebar .list-item-container.selected i, .sidebar .list-item-container.selected i::before {
     color: var(--color-background) !important;
+}
+
+/* Set icon colors when hovered*/
+.sidebar .list-item-container.selected:hover i, .sidebar .list-item-container.selected:hover i::before {
+    color: var(--color-accent) !important;
 }
 
 /* Show heading icons depending on settings */
@@ -101,6 +108,7 @@ html, body {
 /* Show a folder icon beside all notebooks */
 .folders .fa-caret-right::before {
     content: "\f07b";
+    visibility: var(--show-empty-folder-icons);
 }
 
 /* Show an open folder icon beside all expanded notebooks */
@@ -129,8 +137,13 @@ html, body {
 }
 
 /* Set note count label colors on hover */
-.list-item-container:hover .note-count-label {
+.list-item-container.selected .note-count-label {
     color: var(--color-background) !important;
+}
+
+/* Set note count label colors on hover */
+.list-item-container.selected:hover .note-count-label {
+    color: var(--color-text) !important;
 }
 
 /* Right Justify Notebook Count labels */
@@ -142,7 +155,11 @@ html, body {
 /****************************************************************************************************************************************************
  *  Sync Button                                                                                                                                     *
  ***************************************************************************************************************************************************/
-
+/* Setup synchronize message color */
+.sidebar div:last-child * {
+    color: var(--color-text) !important;
+    opacity: 1;
+}
 /* Setup synchronize button background */
 .sidebar div:last-child > button {
     background-color: var(--color-border) !important;
@@ -286,9 +303,6 @@ mark {
     min-height: 15px;
 }
 
-.note-list .list-item-container:hover input[type="checkbox"]:before {
-border: 2px solid var(--color-background) !important;
-}
 
 .note-list input[type="checkbox"]:before {
     display: inline-block;
@@ -298,6 +312,14 @@ border: 2px solid var(--color-background) !important;
     border-radius: 5px;
     min-width: 15px;
     min-height: 15px;
+}
+
+.note-list .list-item-container.selected input[type="checkbox"]:before {
+    border: 2px solid var(--color-background) !important;
+}
+
+.note-list .list-item-container:hover input[type="checkbox"]:before {
+    border: 2px solid var(--color-accent) !important;
 }
 
 .note-list input[type="checkbox"]:checked:before {
@@ -349,21 +371,22 @@ border: 2px solid var(--color-background) !important;
     opacity: 1 !important;
 }
 
-.list-item-container:hover span {
-    color: var(--color-background) !important;
-}
 
 /* Change color of selected list item */
 .list-item-container.selected {
-    background-color: var(--color-item-selected) !important;
+    background-color: var(--color-accent) !important;
 }
 
-/* change color of hovered list item */
-.list-item-container.selected:hover {
-    background-color: var(--color-accent) !important;
+/* Change color of selected list item */
+.list-item-container.selected span {
+    color: var(--color-background) !important;
 }
 
 .list-item-container:hover {
-    background-color: var(--color-accent) !important;
-    color: var(--color-background) !important;
+    background-color: var(--color-border) !important;
+    color: var(--color-text) !important;
+}
+
+.list-item-container:hover span {
+    color: var(--color-text) !important;
 }

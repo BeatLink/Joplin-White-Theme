@@ -78,7 +78,29 @@ export async function setupSettings(){
 			section: 'whiteTheme',
 		}
 	})
-    
+    await joplin.settings.registerSettings({
+		"showEmptyFolderIcons": {
+			label: "Show the folder icon even on notebooks without subnotebooks",
+			value: 'initial',
+            options: {
+                'visible': 'Show',
+                'initial': 'Hide',
+            },
+            isEnum: true,
+			type: SettingItemType.String,
+			public: true,
+			section: 'whiteTheme',
+		}
+	})  
+    await joplin.settings.registerSettings({
+		"sidebarHeadingSpacing": {
+			label: "The size in px for the space around the headings in the sidebar",
+			value: 20,
+			type: SettingItemType.Int,
+			public: true,
+			section: 'whiteTheme',
+		}
+	})  
 }
 
 

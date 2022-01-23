@@ -13,7 +13,9 @@ export async function loadUI() {
         "<<HEADING_FONT_SIZE>>": await joplin.settings.value("headingFontSize"),
         "<<ACCENT_COLOR>>": await joplin.settings.value("accentColor"),
         "<<HEADING_ICON_VISIBILITY>>": await joplin.settings.value("headingIconVisibility"),
-        "<<ALL_NOTES_VISIBILITY>>": await joplin.settings.value("allNotesVisibility")
+        "<<ALL_NOTES_VISIBILITY>>": await joplin.settings.value("allNotesVisibility"),
+        "<<SHOW_EMPTY_FOLDER_ICONS>>": await joplin.settings.value("showEmptyFolderIcons"),
+        "<<SIDEBAR_HEADING_SPACING>>": await joplin.settings.value("sidebarHeadingSpacing")
     }
     for (let key in replacementDict){
         cssString = cssString.replace(key, replacementDict[key])
