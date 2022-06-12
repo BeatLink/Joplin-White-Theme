@@ -64,7 +64,7 @@ html, body {
 }
 
 /* Set Sidebar heading font size, color and capitalizations */
-.sidebar .enXwOp {
+.sidebar .eNteRa {
     color: var(--color-accent) !important;
     font-size: var(--font-size-heading) !important;
     text-transform: capitalize;
@@ -375,6 +375,7 @@ mark {
     border-radius: 5px !important;
     margin: 5px auto !important;
     min-height: var(--height-item); 
+    height: var(--height-item);
     border: none !important;
     width: 95%;
 }
