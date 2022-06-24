@@ -76,6 +76,39 @@ html, body {
 .all-notes {
     display: var(--all-notes-visibility) !important;
 }
+.all-notes:hover {
+    background-color: var(--color-accent) !important;
+    color: var(--color-text) !important;
+}
+
+.all-notes:hover a.list-item {
+   color: #ffffff !important;
+}
+
+.all-notes .list-item {
+    margin-left: 2px !important;
+}
+
+/* Formats the all notes button */
+.all-notes a.list-item {
+    font-size: var(--font-size) !important;
+    color: var(--color-text) !important;
+    opacity: 1 !important;
+}
+
+.all-notes.juqUHj {
+    background-color: var(--color-border) !important;
+}
+
+.folders .all-notes .fa-caret-right::before {
+    visibility: visible !important;
+    content: "\f0c5" !important;
+}
+
+.all-notes .icon-notes {
+    visibility: collapse;
+    display: none;
+}
 
 /* Icons ------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -374,8 +407,7 @@ mark {
 .list-item-container {
     border-radius: 5px !important;
     margin: 5px auto !important;
-    min-height: var(--height-item); 
-    height: var(--height-item);
+    height: var(--height-item) !important;
     border: none !important;
     width: 95%;
 }

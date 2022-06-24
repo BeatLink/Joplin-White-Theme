@@ -69,7 +69,7 @@ export async function setupSettings(){
 			label: "Show the All Notes button",
 			value: 'none',
             options: {
-                'inline': 'Show',
+                'flex': 'Show',
                 'none': 'Hide',
             },
             isEnum: true,
