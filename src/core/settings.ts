@@ -7,7 +7,7 @@ import { SettingItemType } from "api/types"
  ***************************************************************************************************************************************************/
 export async function setupSettings(){
 	console.info("Setting up Settings")
-    
+
     await joplin.settings.registerSection("whiteTheme", {
         name: "whiteTheme",
         label: "White Theme",
@@ -91,7 +91,7 @@ export async function setupSettings(){
 			public: true,
 			section: 'whiteTheme',
 		}
-	})  
+	})
     await joplin.settings.registerSettings({
 		"sidebarHeadingSpacing": {
 			label: "The size in px for the space around the headings in the sidebar",
@@ -100,7 +100,21 @@ export async function setupSettings(){
 			public: true,
 			section: 'whiteTheme',
 		}
-	})  
+	})
+    await joplin.settings.registerSettings({
+	"FullWidthTables": {
+		label: "Tables in notes have full width",
+		value: 'width: revert; table-layout: revert;',
+            options: {
+                'width: 100%; table-layout: fixed;': 'Yes',
+                'width: revert; table-layout: revert;': 'No',
+            },
+            isEnum: true,
+			type: SettingItemType.String,
+			public: true,
+			section: 'whiteTheme',
+	    }
+	})
 }
 
 

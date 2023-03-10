@@ -3,7 +3,7 @@ const fs = joplin.require('fs-extra');
 
 
 export async function loadUI() {
-    const installDir = await joplin.plugins.installationDir();		
+    const installDir = await joplin.plugins.installationDir();
     const originalChromeCssFilePath = installDir + '/css/chrome.css';
     const tempChromeCssFilePath = installDir + "/css/tempchrome.css"
     var cssString = await fs.readFile(originalChromeCssFilePath, 'utf8');
@@ -25,7 +25,7 @@ export async function loadUI() {
 }
 
 export async function loadNote(){
-    const installDir = await joplin.plugins.installationDir();		
+    const installDir = await joplin.plugins.installationDir();
     const originalNoteCssFilePath = installDir + '/css/note.css';
     const tempNoteCssFilePath = installDir + "/css/tempnote.css"
     var cssString = await fs.readFile(originalNoteCssFilePath, 'utf8');
@@ -37,7 +37,8 @@ export async function loadNote(){
         "<<HEADING_ICON_VISIBILITY>>": await joplin.settings.value("headingIconVisibility"),
         "<<ALL_NOTES_VISIBILITY>>": await joplin.settings.value("allNotesVisibility"),
         "<<SHOW_EMPTY_FOLDER_ICONS>>": await joplin.settings.value("showEmptyFolderIcons"),
-        "<<SIDEBAR_HEADING_SPACING>>": await joplin.settings.value("sidebarHeadingSpacing")
+        "<<SIDEBAR_HEADING_SPACING>>": await joplin.settings.value("sidebarHeadingSpacing"),
+        "<<FULL_WIDTH_TABLES>>": await joplin.settings.value("FullWidthTables")
     }
     for (let key in replacementDict){
         cssString = cssString.replace(key, replacementDict[key])

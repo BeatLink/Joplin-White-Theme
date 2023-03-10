@@ -30,3 +30,7 @@ mark {
 	color: var(--color-background);
     padding: 3px;
 }
+
+table {
+    <<FULL_WIDTH_TABLES>>
+}
