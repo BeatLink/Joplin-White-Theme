@@ -1,5 +1,8 @@
 # White Theme
 
+> [!WARNING]
+> **This project is archived and no longer maintained.** I no longer use Joplin, so it will receive no further updates or fixes. Anyone is free to fork it and continue working on it.
+
 A white theme for Joplin, for those of us who aren't vampires ;)
 
 Based on https://github.com/LongBay/Joplin-Light-Theme
